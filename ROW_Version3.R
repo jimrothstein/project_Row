@@ -51,8 +51,6 @@ names(z)<- paste(as.character(c(1:3)),
 
 ## Skip Clumsy (pre-tidydata) ways of massaging data, choosing & changing field
 
-######################  BEGIN
-#######################
 
 d1
 p<- ggplot(d1, aes(x=Date, y=Meters)) +
