@@ -1,4 +1,6 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
+*.html
+*.txt
+*.png
+ggplot2_upenn_tutorial.R
+wt*.R
+zoo*.R
