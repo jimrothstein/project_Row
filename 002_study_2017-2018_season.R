@@ -46,10 +46,36 @@ data1 <- select(data0,Date=Date,
         Watts = "Avg Watts")
 
 # KWatt-hours
-data2 <- mutate(data1, energy = Watts*Time/3600)
+data2 <- mutate(data1, energy = Watts*Time/3600)   # Watt-hours
+glimpse(data2)
 
 
+g <- ggplot(data2, aes(Date,energy)) +
+        geom_point()
+g
+
+# use geom_col for height= value of y
+g <- ggplot(data2, aes(Date, energy)) +
+                    geom_col(fill = "darkorange") +
+        geom_hline(yintercept = c(40,60), 
+                   color = c('blue','red'), linetype=2) +
+        labs (title = "Rowing -- Daily Watt-hour",  
+                subtitle = "60 = maximum, 40 = typical\n60 = 1 lightbulb for 1 hour",
+                caption = "source: my records",
+                y = "Watt-hours") 
+       # annotate ("text", label="LAS",x=2012.833,y=3) 
+
+        
+g
 
 
+====
+        geom_vline(xintercept=2014+11/12, color='red', linetype=2) +
+        labs(title = "Avg Meters Per Day",
+             subtitle = "OCT 2012-2017",
+             caption="source: my records",
+             x="year") +
+        annotate ("text", label="LAS",x=2012.833,y=3) +
+        geom_point(aes(x=yr, y=A1C), size=1, color="red")
 
          
