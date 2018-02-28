@@ -78,4 +78,13 @@ g
         annotate ("text", label="LAS",x=2012.833,y=3) +
         geom_point(aes(x=yr, y=A1C), size=1, color="red")
 
-         
+# plot TIME (min)
+g <- ggplot(data2, aes(Date, Time/60)) +
+        geom_col(fill = "green") +
+        #geom_hline(yintercept = c(40,60), 
+        #           color = c('blue','red'), linetype=2) +
+        labs (title = "Rowing -- Daily TIME (min)",  
+              subtitle = "",
+              caption = "source: my records",
+              y = "Time (min) ") 
+g         
